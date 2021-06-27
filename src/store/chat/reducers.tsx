@@ -19,7 +19,6 @@ export function chatReducer(
         case SEND_MESSAGE:
             const msgs = Array.prototype.concat.call(state.messages)
             msgs.push(action.payload)
-            console.log('debug chat state', state)
             return Object.assign({}, state , { messages: msgs })
         default:
             return { ...state }

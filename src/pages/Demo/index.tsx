@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Msg from '../../containers/Msg'
 import logo from '../../logo.svg';
 import './Demo.scss';
 
@@ -21,7 +22,8 @@ function App() {
         </a>
         <p>
             <Link className="App-link" to='/test'>Test 页</Link>
-        </p>        
+        </p>
+        <Msg />
       </header>
     </div>
   );

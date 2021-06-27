@@ -1,17 +1,19 @@
 import { createStore, combineReducers } from 'redux';
+import enhancers from './enhancers'
 import { chatReducer } from './chat/reducers'
+import { ChatState } from './chat/types'
 
-export type AppDispatch = typeof store.dispatch
+export interface StoreState {
+    chat: ChatState;
+}
 
 const rootReducer = combineReducers({
   chat: chatReducer,
-  
 })
-console.log('debug rootReducer', createStore(rootReducer))
 
 export const store = createStore(
     rootReducer,
-    {}
+    enhancers,
 );
 
 export type AppState = ReturnType<typeof rootReducer>
